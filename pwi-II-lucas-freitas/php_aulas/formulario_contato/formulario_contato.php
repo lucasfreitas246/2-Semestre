@@ -162,6 +162,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
             margin-bottom: 20px;
             font-size: 14px;
         }
+        </style>
 
         <div class="container">
          <h1>Fale Conosco</h1>
@@ -239,7 +240,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
         
     </style>
 </head>
-<body>
+
     
 </body>
 </html>
