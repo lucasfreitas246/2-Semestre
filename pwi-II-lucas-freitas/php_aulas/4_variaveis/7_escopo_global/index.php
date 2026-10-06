@@ -3,42 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varíavel De Escopo Global</title>
+    <title>Escopo Global no PHP</title>
 </head>
 <body>
     <?php
-    /*
-    Varíavel Global
-    A principal característica da varíavel global é ser declarada fora de funções;
-    Por comportamento padrão não são acessíveis dentro de funções;
-    PRecisamos utilizar a palavra global não ser acessivel dentro de funções,
-    previne muitos problemas no software;
-    */
-    $teste="asd";
-    echo"$teste global 1 <br>";
-    if(5>2){
-        $teste="dsa";
-        echo"$teste if <br>";
-    }
+        /*
+        Escopo Global
+        Pode ser declarado fora de funções;
+        Por comportamento padrão não são acessíveis dentro de funções;
+        Precisamos utilizar a palavra global para isso;
+        Essa função da varíavel global não ser acessível dentro de funções, previne muitos problemas no software;
+        */
 
-    echo "$teste global 2 <br>";
+        $teste = "asd";
+        echo "$teste global 1 <br>";
 
-    function funcao(){
-        $teste="xsxs";
-        echo"$teste local <br>";
-    }
+        if(5 > 2) {
+            $teste = "dsa";
+            echo "$teste if <br>";
+        }
 
-    funcao();
+        echo "$teste global 2 <br>";
 
-    function testandoGlobal() {
-        global $teste;
-        $teste=2;
-        echo "$teste global função <br>";
-    }
+        function funcao() {
+            $teste = "xsxs";
+            echo "$teste local <br>";
+        }
 
-    testandoGLobal();
-    
-    echo "$teste global 3 <br>";
+        funcao();
+        function testandoGlobal() {
+            global $teste;
+            $teste = 2;
+            echo "$teste global função <br>";
+        }
+
+        testandoGlobal();
+        echo "$teste global 3 <br>";
     ?>
 </body>
 </html>
