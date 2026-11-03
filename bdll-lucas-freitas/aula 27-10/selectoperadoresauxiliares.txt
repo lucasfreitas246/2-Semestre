@@ -1,0 +1,78 @@
+-- Criação do banco de dados
+CREATE DATABASE IF NOT EXISTS empresa_db;
+USE empresa_db;
+
+-- Criação da tabela de clientes
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cidade VARCHAR(50),
+    idade INT,
+    desconto DECIMAL(5,2),
+    telefone VARCHAR(20)
+);
+
+-- Inserção de dados de teste
+INSERT INTO clientes (nome, cidade, idade, desconto, telefone) VALUES
+('Ana Silva', 'São Paulo', 28, 15.00, '11999991111'),
+('Bruno Santos', 'Rio de Janeiro', 35, 10.00, '21999992222'),
+('Carla Souza', 'Belo Horizonte', 22, 0.00, NULL),
+('Daniel Oliveira', 'São Paulo', 42, 20.00, '11999993333'),
+('Eduardo Lima', 'Curitiba', 19, 5.00, NULL),
+('Fernanda Costa', 'Porto Alegre', 31, 12.50, '51999994444'),
+('Gabriel Alves', 'São Paulo', 50, 0.00, '11999995555'),
+('Helena Rocha', 'Salvador', 25, 8.00, NULL);
+
+ select * from clientes;
+ 
+#Busca clientes com idade entre 20 e 35 anos, ordenando do mais novo para o mais velho
+SELECT nome, idade, cidade 
+FROM clientes 
+WHERE idade BETWEEN 20 AND 35 
+ORDER BY idade DESC;
+
+#Busca clientes que moram em São Paulo, Rio de Janeiro ou Curitiba:
+
+SELECT nome, cidade 
+FROM clientes 
+WHERE cidade IN ('São Paulo', 'Rio de Janeiro', 'Curitiba')
+ORDER BY cidade;
+
+
+
+#Busca clientes que não possuem número de telefone cadastrado:
+SELECT nome, cidade, telefone 
+FROM clientes 
+WHERE telefone IS NULL;
+
+#Busca clientes que não moram em São Paulo:
+SELECT nome, cidade 
+FROM clientes 
+WHERE NOT cidade = 'São Paulo'
+ORDER BY nome;
+
+#Busca clientes cujo nome começa com a letra 'A' ou contém o sobrenome 'Costa':
+SELECT nome, cidade 
+FROM clientes 
+WHERE nome LIKE 'A%' OR nome LIKE '%Costa%';
+
+
+/*Têm idade entre 20 e 45 anos (BETWEEN)
+
+Moram em São Paulo ou Rio de Janeiro (IN)
+
+Possuem telefone cadastrado (NOT + IS NULL)
+
+O nome começa com A, B, C, D ou E (LIKE)
+
+Ordenados pelo desconto do maior para o menor (ORDER BY)*/
+
+SELECT nome, cidade, idade, desconto, telefone
+FROM clientes
+WHERE idade BETWEEN 20 AND 45
+  AND cidade IN ('São Paulo', 'Rio de Janeiro')
+  AND telefone IS NOT NULL
+  AND (nome LIKE 'A%' OR nome LIKE 'B%' OR nome LIKE 'C%' OR nome LIKE 'D%' OR nome LIKE 'E%')
+ORDER BY desconto DESC;
+
+

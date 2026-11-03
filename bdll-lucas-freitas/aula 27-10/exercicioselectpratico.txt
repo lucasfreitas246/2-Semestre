@@ -1,0 +1,59 @@
+Exercício Prático de SQL: SELECT com Operadores Auxiliares
+
+1. Cenário do exercício
+Uma loja virtual precisa consultar os dados de seus produtos para gerar relatórios de vendas, verificar preços e identificar produtos disponíveis para comercialização.
+
+Considere a tabela produtos, criada com a seguinte estrutura:
+
+CREATE TABLE produtos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    categoria VARCHAR(50),
+    preco DECIMAL(10,2),
+    estoque INT,
+    fornecedor VARCHAR(100)
+);
+
+
+2. Inserindo os dados
+Execute o comando abaixo para cadastrar os produtos:
+
+INSERT INTO produtos
+(nome, categoria, preco, estoque, fornecedor) VALUES
+('Notebook', 'Informática', 3500.00, 10, 'TechBrasil'),
+('Mouse', 'Informática', 80.00, 50, 'InfoMax'),
+('Teclado', 'Informática', 150.00, 30, 'InfoMax'),
+('Cadeira', 'Móveis', 650.00, 8, 'Moveis Silva'),
+('Mesa', 'Móveis', 900.00, 5, 'Moveis Silva'),
+('Monitor', 'Informática', 1200.00, 12, 'TechBrasil'),
+('Impressora', 'Periféricos', 750.00, 7, 'PrintMais'),
+('Webcam', 'Periféricos', 180.00, 0, 'PrintMais'),
+('Headset', 'Periféricos', 250.00, 15, NULL),
+('Smartphone', 'Telefonia', 2200.00, 20, 'TechBrasil');
+
+
+3. Atividades práticas
+Resolva as questões utilizando o comando SELECT e os operadores indicados.
+
+1. Operador IN — Exiba os produtos das categorias Informática e Periféricos.
+
+2. Operador BETWEEN — Exiba os produtos com preços entre R$ 200,00 e R$ 1.000,00, incluindo os limites.
+
+3. Operador LIKE — Exiba os produtos cujos nomes começam com a letra M.
+
+4. Operador LIKE com % — Exiba os produtos cujos nomes terminam com a letra E.
+
+5. Operador IS NULL — Exiba os produtos que não possuem fornecedor cadastrado.
+
+6. Operador IS NOT NULL — Exiba os produtos que possuem fornecedor cadastrado.
+
+7. Operador AND — Exiba os produtos da categoria Informática com preço superior a R$ 100,00.
+
+8. Operador OR — Exiba os produtos da categoria Móveis ou Telefonia.
+
+9. Operador NOT IN — Exiba os produtos que não pertencem às categorias Informática e Telefonia.
+
+10. Operadores combinados — Exiba os produtos com estoque maior que zero e preço entre R$ 100,00 e R$ 1.000,00.
+
+
+

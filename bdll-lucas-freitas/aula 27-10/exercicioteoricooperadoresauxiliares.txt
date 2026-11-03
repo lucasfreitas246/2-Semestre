@@ -1,0 +1,21 @@
+Trabalho sobre operadores auxiliares
+
+-Conceitue de operadores auxiliares em SQL.
+
+-Explique os operadores abaixo, e cite um exemplo:
+  in;
+  between;
+  is null;
+  not;
+  like.
+
+-Qual a importância dos operadores auxiliares em SQL?
+
+-Quais cuidados na utilização dos operadores auxiliares?
+
+Trabalho individual;
+Escrito;
+Na folha; 
+Colocar nome.
+
+
